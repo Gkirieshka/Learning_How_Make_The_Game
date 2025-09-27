@@ -4,13 +4,7 @@ public class Collectble : MonoBehaviour
 {
     private float speedRising = 2.0f;
     private bool isRising = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+   
     void Update()
     {
         transform.Rotate(0.0f,100f * Time.deltaTime,0.0f);
@@ -27,6 +21,7 @@ public class Collectble : MonoBehaviour
         {
             isRising = true;
             Invoke("OnDestroy", 1.0f);
+            ScoreManager.instance.AddScore(1);
             
         }
     }
