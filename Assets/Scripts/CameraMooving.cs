@@ -4,6 +4,7 @@ public class CameraMooving : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
+    public CameraMooving cameraMooving;
     void Start()
     {
         
