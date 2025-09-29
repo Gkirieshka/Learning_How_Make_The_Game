@@ -13,7 +13,7 @@ public class MagicCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Toch cube");
+        //Debug.Log($"Toch cube");
         if (cl)
         {
             Debug.Log($"HAHAHAHAHHA!!!");
