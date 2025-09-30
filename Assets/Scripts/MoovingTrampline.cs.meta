@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 4cfed1cf125d11945b3c484880767eeb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - trampline: {instanceID: 0}
+  - tramplineTransform: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
