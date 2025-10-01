@@ -6,36 +6,40 @@ using UnityEngine.UIElements;
 public class MoovingTrampline : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject trampline;
     public Transform tramplineTransform;
-    public bool isStandButton = false;
-    public float tramplineSpeed = 10f;
-    
+    private bool isShouldmove = false;
+    public float moveSpeed = 10f;
+    public float moveDistance = 5f;
+
+    private Vector3 startPos;
+    private Vector3 endPos;
     void Start()
     {
-        
+        if(tramplineTransform != null)
+        {
+            startPos = tramplineTransform.position;
+            endPos = startPos;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-       
+        if (isShouldmove && tramplineTransform != null)
+        {
+            tramplineTransform.position = Vector3.MoveTowards(tramplineTransform.position, endPos, moveSpeed * Time.deltaTime);
+        }
+
+
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Vector3 tramplineMooving = new Vector3(1, 0, 0);
-            trampline.transform.position = tramplineTransform.position * tramplineSpeed * Time.deltaTime;
-           // transform.Translate(Vector3.down * tramplineSpeed * Time.deltaTime);
-            Debug.Log("you move");
+            endPos = startPos + new Vector3(moveDistance, 0, 0);
+            isShouldmove = true;
         }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        Debug.Log("You dont stand on the button");
     }
 
 
