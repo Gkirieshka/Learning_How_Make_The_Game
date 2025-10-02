@@ -4,6 +4,7 @@ public class Collectble : MonoBehaviour
 {
     private float speedRising = 2.0f;
     private bool isRising = false;
+    
    
     void Update()
     {
@@ -22,6 +23,7 @@ public class Collectble : MonoBehaviour
             isRising = true;
             Invoke("OnDestroy", 1.0f);
             ScoreManager.instance.AddScore(1);
+            MoovingTrampline.
             
         }
     }

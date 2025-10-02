@@ -1,47 +1,47 @@
-using System.Security.Cryptography;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MoovingTrampline : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public Transform tramplineTransform;
-    private bool isShouldmove = false;
-    public float moveSpeed = 10f;
-    public float moveDistance = 5f;
+    [Header("Объект трамплина")]
+    public static Transform tramplineTransform;
 
+    [Header("Насколько сдвигаем по X")]
+    public float moveDistance = 10f;
+
+    [Header("Скорость движения трамплина")]
+    public float moveSpeed = 1f;
+
+    private bool shouldMove = false;
     private Vector3 startPos;
-    private Vector3 endPos;
+    private Vector3 targetPos;
+
     void Start()
     {
-        if(tramplineTransform != null)
+        if (tramplineTransform != null)
         {
             startPos = tramplineTransform.position;
-            endPos = startPos;
+            targetPos = startPos;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (isShouldmove && tramplineTransform != null)
+        if (shouldMove && tramplineTransform != null)
         {
-            tramplineTransform.position = Vector3.MoveTowards(tramplineTransform.position, endPos, moveSpeed * Time.deltaTime);
+            tramplineTransform.position = Vector3.MoveTowards(tramplineTransform.position,targetPos, moveSpeed * Time.deltaTime);
         }
-
-
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void ChangeDistance()
     {
-        if (other.CompareTag("Player"))
-        {
-            endPos = startPos + new Vector3(moveDistance, 0, 0);
-            isShouldmove = true;
-        }
+
+            Debug.Log("Игрок прыгнул на кнопку");
+
+            // ставим новую цель для трамплина
+            targetPos = startPos + new Vector3(moveDistance, 0, 0);
+
+            // запускаем движение
+            shouldMove = true;
+        
     }
-
-
-
 }

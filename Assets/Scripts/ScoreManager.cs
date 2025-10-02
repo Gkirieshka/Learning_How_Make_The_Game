@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private int _score;
+    protected int _score;
     public static ScoreManager instance;
     public Text scoreText;
 
