@@ -1,11 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Collectble : MonoBehaviour
 {
     private float speedRising = 2.0f;
     private bool isRising = false;
-    
-   
+    public static event Action OnCoinCollected;
+
+
     void Update()
     {
         transform.Rotate(0.0f,100f * Time.deltaTime,0.0f);
@@ -23,7 +25,9 @@ public class Collectble : MonoBehaviour
             isRising = true;
             Invoke("OnDestroy", 1.0f);
             ScoreManager.instance.AddScore(1);
-            MoovingTrampline.
+            OnCoinCollected?.Invoke();
+
+           
             
         }
     }
@@ -31,5 +35,6 @@ public class Collectble : MonoBehaviour
     public void OnDestroy()
     {
         Destroy(gameObject);
+
     }
 }

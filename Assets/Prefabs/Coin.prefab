@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e2567bec4bb643ab3da103fcca1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectble
-  trampline: {fileID: 0}
 --- !u!114 &2401106814336100410
 MonoBehaviour:
   m_ObjectHideFlags: 0

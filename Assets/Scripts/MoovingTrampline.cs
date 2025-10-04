@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 
 public class MoovingTrampline : MonoBehaviour
 {
     [Header("Объект трамплина")]
-    public static Transform tramplineTransform;
+    public Transform tramplineTransform;
 
     [Header("Насколько сдвигаем по X")]
     public float moveDistance = 10f;
@@ -15,33 +16,38 @@ public class MoovingTrampline : MonoBehaviour
     private Vector3 startPos;
     private Vector3 targetPos;
 
+    
+    
+
     void Start()
     {
+       
         if (tramplineTransform != null)
         {
             startPos = tramplineTransform.position;
             targetPos = startPos;
+           
         }
     }
-
     void Update()
     {
+
         if (shouldMove && tramplineTransform != null)
         {
-            tramplineTransform.position = Vector3.MoveTowards(tramplineTransform.position,targetPos, moveSpeed * Time.deltaTime);
+            tramplineTransform.position = Vector3.MoveTowards(tramplineTransform.position, targetPos, moveSpeed * Time.deltaTime);
         }
     }
-
+    private int CollectCoins = 0;
     public void ChangeDistance()
     {
-
-            Debug.Log("Игрок прыгнул на кнопку");
-
+            Debug.Log("Игрок взял монету");
             // ставим новую цель для трамплина
-            targetPos = startPos + new Vector3(moveDistance, 0, 0);
-
+            CollectCoins++;
+            targetPos = startPos + new Vector3(moveDistance * CollectCoins, 0, 0);
             // запускаем движение
             shouldMove = true;
-        
     }
+    private void OnEnable() => Collectble.OnCoinCollected += ChangeDistance;
+    private void OnDisable() => Collectble.OnCoinCollected -= ChangeDistance;
+
 }
