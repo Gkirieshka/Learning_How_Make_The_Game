@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3172458300592680830}
   - component: {fileID: 2015295726762553723}
   - component: {fileID: 9185224587216605297}
-  - component: {fileID: 2401106814336100410}
+  - component: {fileID: -4209756252664344974}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coins
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e2567bec4bb643ab3da103fcca1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectble
---- !u!114 &2401106814336100410
+--- !u!114 &-4209756252664344974
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,9 +134,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4245942225174551168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfed1cf125d11945b3c484880767eeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f763ef17f02d204c964de692486fbbc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoovingTrampline
-  tramplineTransform: {fileID: 3897969667560170562, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
-  moveDistance: 10
-  moveSpeed: 1
+  m_EditorClassIdentifier: Assembly-CSharp::TramplinMooving
+  trampline: {fileID: 3897969667560170562, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
+  mooveSpeed: 1
+  mooveDistance: {x: 3, y: 0, z: 0}

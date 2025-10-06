@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 572128428754101496}
   - component: {fileID: 2923792434890652679}
   - component: {fileID: 399740365221097555}
+  - component: {fileID: -6147834184968865245}
   - component: {fileID: 3814104339147176110}
   - component: {fileID: 6557706345342875126}
   - component: {fileID: 2503874043960357}
@@ -93,6 +94,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-6147834184968865245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648003572354459775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effd0c5f421fac64b9d25b86e84dacaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::deathSystem
+  hightDeathZone: -20
 --- !u!135 &3814104339147176110
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -153,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee5cc7ea4cf2d5498f122bd57c172b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMooving
-  moveForce: 1000
-  jumpForce: 15
+  moveForge: 1000
+  jumpForge: 15
   isGround: 0
 --- !u!1 &6892050032942730010
 GameObject:

@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &962591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3897969667560170562, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
+  m_PrefabInstance: {fileID: 1957713179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &102102705
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 102102708}
   - component: {fileID: 102102707}
-  - component: {fileID: 102102706}
+  - component: {fileID: 102102709}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -137,20 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &102102706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102102705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cfed1cf125d11945b3c484880767eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoovingTrampline
-  moveDistance: 10
-  moveSpeed: 2
 --- !u!65 &102102707
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -187,6 +178,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102102709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102102705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f763ef17f02d204c964de692486fbbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TramplinMooving
+  trampline: {fileID: 962591}
+  mooveSpeed: 1
+  mooveDistance: {x: 3, y: 0, z: 0}
 --- !u!1 &111451432
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,8 +332,8 @@ Transform:
   m_GameObject: {fileID: 156093273}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -19.22645, y: 0.85, z: 10.58519}
-  m_LocalScale: {x: 61.415348, y: 1.7729995, z: 1.4810412}
+  m_LocalPosition: {x: -19.22645, y: 0.29999995, z: 10.58519}
+  m_LocalScale: {x: 61.415348, y: 1.2994801, z: 1.4810412}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2075019888}
@@ -948,8 +954,8 @@ Transform:
   m_GameObject: {fileID: 519800817}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 17.17355, y: 0.85, z: 10.58519}
-  m_LocalScale: {x: 61.415348, y: 1.7729995, z: 1.4810412}
+  m_LocalPosition: {x: 17.174, y: 0.29999995, z: 10.58519}
+  m_LocalScale: {x: 61.415348, y: 1.2994801, z: 1.4810412}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2075019888}
@@ -1488,6 +1494,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666307773}
     m_Modifications:
+    - target: {fileID: -4209756252664344974, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: trampline
+      value: 
+      objectReference: {fileID: 962591}
     - target: {fileID: 4245942225174551168, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
       propertyPath: m_Name
       value: Coin (3)
@@ -1545,6 +1555,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666307773}
     m_Modifications:
+    - target: {fileID: -4209756252664344974, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: trampline
+      value: 
+      objectReference: {fileID: 962591}
+    - target: {fileID: 2401106814336100410, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: tramplineTransform
+      value: 
+      objectReference: {fileID: 962591}
     - target: {fileID: 4245942225174551168, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
       propertyPath: m_Name
       value: Coin (5)
@@ -1876,6 +1894,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+--- !u!1 &1332361083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1958141919394679563, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
+  m_PrefabInstance: {fileID: 1957713179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1332361087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332361083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f763ef17f02d204c964de692486fbbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TramplinMooving
+  trampline: {fileID: 0}
+  mooveSpeed: 1
+  mooveDistance: {x: 0, y: 0, z: 10}
 --- !u!1 &1374488673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,8 +1994,8 @@ Transform:
   m_GameObject: {fileID: 1431949049}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.43645, y: 0.85, z: 40.70519}
-  m_LocalScale: {x: 36.03081, y: 1.7605, z: 1}
+  m_LocalPosition: {x: -1.43645, y: 0.29999995, z: 40.70519}
+  m_LocalScale: {x: 36.03081, y: 1.2903187, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2075019888}
@@ -2067,8 +2105,8 @@ Transform:
   m_GameObject: {fileID: 1546459919}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.43645, y: 0.85, z: -20.03481}
-  m_LocalScale: {x: 36.03081, y: 1.7605, z: 1}
+  m_LocalPosition: {x: -1.43645, y: 0.3, z: -20.03481}
+  m_LocalScale: {x: 36.03081, y: 1.2903187, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2075019888}
@@ -2489,7 +2527,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958141919394679563, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
       propertyPath: m_Name
-      value: tramplin
+      value: Tramplin
       objectReference: {fileID: 0}
     - target: {fileID: 3897969667560170562, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2539,7 +2577,10 @@ PrefabInstance:
     - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1958141919394679563, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1332361087}
   m_SourcePrefab: {fileID: 100100000, guid: b1b87ff10f38ea24d9df60e74f06bda1, type: 3}
 --- !u!1 &1963756330
 GameObject:
