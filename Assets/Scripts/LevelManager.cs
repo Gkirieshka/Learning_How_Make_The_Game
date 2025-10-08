@@ -7,9 +7,11 @@ public class LevelManager : MonoBehaviour
     public GameObject playerPrefab;
     public Transform instantiatePos;
     public CameraMooving cameraMooving;
+    public GameObject go;
     void Start()
     {
-       GameObject go = Instantiate(playerPrefab, instantiatePos.position, Quaternion.identity);
+     go = Instantiate(playerPrefab, instantiatePos.position, Quaternion.identity);
+
         cameraMooving.target = go.transform;
     }
 

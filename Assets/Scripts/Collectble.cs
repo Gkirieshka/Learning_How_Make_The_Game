@@ -26,7 +26,7 @@ public class Collectble : MonoBehaviour
             Invoke("OnDestroy", 1.0f);
             ScoreManager.instance.AddScore(1);
             TramplinMooving.moving.MoveTrampline();
-
+            TimerSystem.instance.AddTime(10);
         }
     }
 
