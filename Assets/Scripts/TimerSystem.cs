@@ -31,7 +31,8 @@ remainingTime = duration;
     // Update is called once per frame
     void Update()
     {
-        if (isRunning) { 
+        if (isRunning)
+        { 
         remainingTime -= Time.deltaTime;
             UpdateTimerText();
             if (remainingTime <= 0)
@@ -41,7 +42,7 @@ remainingTime = duration;
                 Debug.Log("Уничтожаем объект!" + playerDestroy.name);
                 playerDestroy = GameObject.FindGameObjectWithTag("Player");
                 
-                if(levelManager.go != null)
+                if(levelManager != null && levelManager.go != null)
                 {
                     Destroy(playerDestroy);
                     levelManager.go = null;

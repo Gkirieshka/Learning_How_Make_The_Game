@@ -1732,6 +1732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666307773}
     m_Modifications:
+    - target: {fileID: -4209756252664344974, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: trampline
+      value: 
+      objectReference: {fileID: 962591}
     - target: {fileID: 4245942225174551168, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
       propertyPath: m_Name
       value: Coin (2)
@@ -1827,7 +1831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimerSystem
   timerText: {fileID: 1127364765}
   playerDestroy: {fileID: 648003572354459775, guid: df7d215c0ed6dd947bddaaf7f8464169, type: 3}
-  levelManager: {fileID: 0}
+  levelManager: {fileID: 1374488674}
   duration: 10
 --- !u!1001 &1211020419
 PrefabInstance:
@@ -1837,6 +1841,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666307773}
     m_Modifications:
+    - target: {fileID: -4209756252664344974, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: trampline
+      value: 
+      objectReference: {fileID: 962591}
     - target: {fileID: 4245942225174551168, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
       propertyPath: m_Name
       value: Coin (4)
@@ -2005,6 +2013,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666307773}
     m_Modifications:
+    - target: {fileID: -4209756252664344974, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: trampline
+      value: 
+      objectReference: {fileID: 962591}
     - target: {fileID: 4245942225174551168, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
       propertyPath: m_Name
       value: Coin (1)
@@ -2106,7 +2118,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 648003572354459775, guid: df7d215c0ed6dd947bddaaf7f8464169, type: 3}
   instantiatePos: {fileID: 1868276370}
   cameraMooving: {fileID: 330585548}
-  go: {fileID: 0}
+  go: {fileID: 648003572354459775, guid: df7d215c0ed6dd947bddaaf7f8464169, type: 3}
 --- !u!4 &1374488675
 Transform:
   m_ObjectHideFlags: 0
@@ -3053,6 +3065,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1666307773}
     m_Modifications:
+    - target: {fileID: -4209756252664344974, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
+      propertyPath: trampline
+      value: 
+      objectReference: {fileID: 962591}
     - target: {fileID: 4245942225174551168, guid: 2e02e9141c5d4e3418c3c435f02003fc, type: 3}
       propertyPath: m_Name
       value: Coin
