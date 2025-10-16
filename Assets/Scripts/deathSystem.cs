@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class deathSystem : MonoBehaviour
 {
@@ -19,7 +20,14 @@ public class deathSystem : MonoBehaviour
         if(transform.position.y <= hightDeathZone)
         {
            transform.position = startPos + gameObject.transform.position * Time.deltaTime;
+
+            Invoke("ChangeLevel", 3f);        
         }
+    }
+
+    void ChangeLevel()
+    {
+        SceneManager.LoadScene("Level2");
     }
 
 }

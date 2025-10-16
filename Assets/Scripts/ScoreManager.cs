@@ -7,6 +7,8 @@ public class ScoreManager : MonoBehaviour
     protected int _score;
     public static ScoreManager instance;
     public Text scoreText;
+    public DownWalls downWalls;
+
 
     // Update is called once per frame
 
@@ -15,6 +17,7 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            
         }
     }
     public void AddScore(int point)
@@ -22,5 +25,13 @@ public class ScoreManager : MonoBehaviour
         _score += point;
         Debug.Log($"You have {_score}");
         scoreText.text = $" Score: {_score.ToString()}";
+        if (_score == 7)
+        {
+            downWalls.WallsDown();
+        }
+
     }
+
+
+
 }
